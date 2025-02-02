@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Ball Cevap</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            width: 350px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #cevap-alanı {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>8 Ball Cevabı</h1>
+        <img src="vecteezy_billiard-balls-clipart-design-illustration_9384622.png" width="100" height="100">
+        <div id="cevap-alanı">
+            <p id="cevap"></p>
+        </div>
+        <button onclick="window.location.href='index.html'">Geri Dön</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cevapAlani = document.getElementById("cevap");
+            const cevap = localStorage.getItem("sonCevap");
+            const renk = localStorage.getItem("arkaPlanRenk");
+
+            if (cevap) {
+                cevapAlani.textContent = cevap;
+                document.getElementById("cevap-alanı").style.backgroundColor = renk;
+            }
+        });
+    </script>
+</body>
+</html>
